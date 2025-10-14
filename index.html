@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Ejercicio 03 - Rango 100 a 300</title>
+
+
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f4f6f9;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+    }
+
+    .contenedor {
+      background: white;
+      padding: 20px;
+      border-radius: 12px;
+      box-shadow: 0px 4px 12px rgba(0,0,0,0.15);
+      width: 400px;
+      text-align: center;
+    }
+
+    h1 {
+      font-size: 20px;
+      color: #333;
+    }
+
+    .caja {
+      background: #6fc2bb;
+      padding: 12px;
+      border-radius: 8px;
+      margin-bottom: 15px;
+      text-align: left;
+    }
+
+    h3 {
+      margin: 0 0 5px 0;
+      color: #e81ae8;
+    }
+
+    input {
+      padding: 8px;
+      width: 90%;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+      margin-bottom: 12px;
+    }
+
+    button {
+      background: #34a853;
+      color: white;
+      border: none;
+      padding: 10px 16px;
+      border-radius: 6px;
+      cursor: pointer;
+      font-size: 14px;
+    }
+
+    button:hover {
+      background: #2c8c47;
+    }
+
+    #resultado {
+      margin-top: 15px;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+  <div class="contenedor">
+    <h1>Ejercicio 03: ¿Está en el rango 100-300?</h1>
+
+    <div class="caja">
+      <h3>Instrucciones</h3>
+      <p>Ingresa un número y comprueba si se encuentra dentro del rango de 100 a 300 (incluidos).</p>
+      <p>Usaremos el operador lógico <strong>&& (AND)</strong> para verificar que el número sea mayor o igual a 100 y menor o igual a 300.</p>
+    </div>
+
+    <input type="number" id="valor" placeholder="Escribe un número">
+    <button id="btn">✔ Verificar Rango</button>
+
+    <p id="resultado"></p>
+  </div>
+
+  <script>
+    document.getElementById("btn").addEventListener("click", function() {
+      let valor = Number(document.getElementById("valor").value);
+      let resultado = document.getElementById("resultado");
+
+      if (valor >= 100 && valor <= 300) {
+        resultado.textContent = "✅ ¡Correcto! El valor " + valor + " está DENTRO del rango 100-300.";
+        resultado.style.color = "green";
+      } else {
+        resultado.textContent = "❌ El valor " + valor + " está FUERA del rango 100-300.";
+        resultado.style.color = "red";
+      }
+    });
+  </script>
+</body>
+</html>
